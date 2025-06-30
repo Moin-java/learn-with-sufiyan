@@ -20,9 +20,9 @@ public class EmployeeController {
     }
       // http://localhost:8080/api/createEmployee/emp
     @PostMapping("/emp")
-      public ResponseEntity<Long>createEmployee(@RequestBody Employee employee){
-        Long employee1 = employeeService.createEmployee(employee);
-
-        return new ResponseEntity<>(employee1, HttpStatus.CREATED);
+      public ResponseEntity<?> createEmployee(@RequestBody Employee employee){
+        Employee employee1 = employeeService.createEmployee(employee);
+        Long id = employee1.getId();
+        return new ResponseEntity<>(id, HttpStatus.CREATED);
       }
 }

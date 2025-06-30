@@ -13,7 +13,7 @@ public class EmployeeService {
         this.employeeRepository = employeeRepository;
     }
 
-    public  Long createEmployee(Employee employee){
+    public  Employee createEmployee(Employee employee){
 
         Employee employee1 = new Employee();
         employee1.setName(employee.getName());
@@ -22,6 +22,6 @@ public class EmployeeService {
 
         Employee save = employeeRepository.save(employee);
 
-        return  save.getId();
+        return  save;
     }
 }
